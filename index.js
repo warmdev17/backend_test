@@ -190,13 +190,8 @@ console.log(filterValidEmploy);
 const employeesWithDefaultEmail = filterValidEmploy.map((employee) => {
   if (!employee.email) {
     return {
-      id: employee.id,
-      name: employee.name,
+      ...employee,
       email: `${employee.id}_${employee.position.toLowerCase()}@company.com`,
-      phoneNumber: employee.phoneNumber,
-      gender: employee.gender,
-      position: employee.position,
-      salary: employee.salary,
     };
   }
   return employee;
