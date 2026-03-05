@@ -204,11 +204,13 @@ const employeesWithDefaultEmail = filterValidEmploy.map((employee) => {
 
 console.log(employeesWithDefaultEmail);
 
-const positions = employeesWithDefaultEmail.map(
-  (employee) => employee.position,
-);
+const positions = employeesWithDefaultEmail
+  .map((employee) => employee.position)
+  .filter((employee, index, arr) => {
+    return arr.indexOf(employee) === index;
+  });
 
 const avgSalaryByPosition = employeesWithDefaultEmail.reduce(
-  (employee) => {},
-  [...positions],
+  () => {},
+  positions,
 );
