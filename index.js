@@ -210,7 +210,11 @@ const positions = employeesWithDefaultEmail
     return arr.indexOf(employee) === index;
   });
 
+const avgSalary = positions.map((position) => {
+  return [position, 0];
+});
+
 const avgSalaryByPosition = employeesWithDefaultEmail.reduce(
-  () => {},
-  positions,
+  (employee, salary) => {},
+  avgSalary,
 );
